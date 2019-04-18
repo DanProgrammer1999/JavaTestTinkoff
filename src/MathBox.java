@@ -17,6 +17,22 @@ public class MathBox{
         }
     }
 
+    public Number summator(){
+        if(data.size() == 0){
+            return 0;
+        }
+
+        double result = 0;
+        for(Number n : data){
+            result += n.doubleValue();
+        }
+
+        if((int) result - result == 0){
+            return (int) result;
+        }
+        return result;
+    }
+
     public String toString(){
         StringBuffer result = new StringBuffer("{");
         data.forEach((Number number) -> result.append(number).append(", "));
