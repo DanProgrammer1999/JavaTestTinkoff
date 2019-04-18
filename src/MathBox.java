@@ -23,6 +23,15 @@ public class MathBox extends ObjectBox{
         }
     }
 
+    @Override
+    public void add(Object o) throws Exceptions.NotUniqueItemException{
+        if(!(o instanceof Number)){
+            throw new IllegalArgumentException("Object " + o.toString() + " is not instance of Number!");
+        }
+
+        super.add(o);
+    }
+
     /**
      * Sum up all elements in the object and return the result.
      *
