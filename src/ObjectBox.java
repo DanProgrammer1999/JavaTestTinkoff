@@ -32,4 +32,8 @@ public class ObjectBox{
     public ListIterator<Object> listIterator(){
         return data.listIterator();
     }
+
+    public int size(){
+        return data.size();
+    }
 }
