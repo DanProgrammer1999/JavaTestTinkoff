@@ -28,4 +28,8 @@ public class ObjectBox{
 
         return false;
     }
+
+    public ListIterator<Object> listIterator(){
+        return data.listIterator();
+    }
 }
