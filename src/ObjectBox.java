@@ -97,6 +97,9 @@ public class ObjectBox{
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString(){
         StringBuffer result = new StringBuffer("{");
