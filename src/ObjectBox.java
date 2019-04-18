@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class ObjectBox{
     private ArrayList<Object> data;
@@ -13,5 +14,18 @@ public class ObjectBox{
         }
 
         data.add(o);
+    }
+
+    public boolean remove(Object o){
+        ListIterator<Number> iterator = this.listIterator();
+
+        while(iterator.hasNext()){
+            if(iterator.next().equals(o)){
+                iterator.remove();
+                return true;
+            }
+        }
+
+        return false;
     }
 }
