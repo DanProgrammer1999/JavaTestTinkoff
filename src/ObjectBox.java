@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class ObjectBox{
-    private ArrayList<Object> data;
+    protected ArrayList<Object> data;
 
     public ObjectBox(){
         data = new ArrayList<>();
@@ -52,5 +52,21 @@ public class ObjectBox{
         }
 
         return true;
+    }
+
+    /**
+     * Get hash code of this object
+     *
+     * @return Calculated hash code of the object
+     */
+    @Override
+    public int hashCode(){
+        int result = 13;
+
+        for(Object o : data){
+            result = result*37 + o.hashCode();
+        }
+
+        return result;
     }
 }
