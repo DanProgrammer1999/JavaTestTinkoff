@@ -62,6 +62,17 @@ public class MathBox{
 
         return result.toString();
     }
+
+    @Override
+    public int hashCode(){
+        int result = 13;
+
+        for(Number n : data){
+            result = result*37 + n.hashCode();
+        }
+
+        return result;
+    }
 }
 
 class NotUniqueItemException extends Exception{
