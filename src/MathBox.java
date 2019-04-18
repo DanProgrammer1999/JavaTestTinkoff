@@ -1,11 +1,8 @@
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class MathBox extends ObjectBox{
-
-    private ArrayList<Number> data;
 
     /**
      * Constructor for class <code>MathBox</code>
@@ -37,8 +34,8 @@ public class MathBox extends ObjectBox{
         }
 
         double result = 0;
-        for(Number n : data){
-            result += n.doubleValue();
+        for(Object o : data){
+            result += ((Number) o).doubleValue();
         }
 
         if((int) result - result == 0){
@@ -57,9 +54,9 @@ public class MathBox extends ObjectBox{
         if(factor.doubleValue() == 0.0){
             throw new ArithmeticException("Cannot divide by zero.");
         }
-        ListIterator<Number> iterator = data.listIterator();
+        ListIterator<Object> iterator = data.listIterator();
         while(iterator.hasNext()){
-            double currElement = iterator.next().doubleValue();
+            double currElement = ((Number) iterator.next()).doubleValue();
             double result = currElement/factor.doubleValue();
             if((int) result - result == 0){
                 iterator.set((int) result);
@@ -71,21 +68,6 @@ public class MathBox extends ObjectBox{
     }
 
     /**
-     * String representation of the object.
-     *
-     * @return String representation, which contains each element, separated by ',' and encased in '{}'
-     */
-    public String toString(){
-        StringBuffer result = new StringBuffer("{");
-        data.forEach((Number number) -> result.append(number).append(", "));
-
-        result.delete(result.length() - 2, result.length());
-        result.append("}");
-
-        return result.toString();
-    }
-
-    /**
      * Get hash code of this object
      *
      * @return Calculated hash code of the object
@@ -94,8 +76,8 @@ public class MathBox extends ObjectBox{
     public int hashCode(){
         int result = 13;
 
-        for(Number n : data){
-            result = result*37 + n.hashCode();
+        for(Object o : data){
+            result = result*37 + o.hashCode();
         }
 
         return result;

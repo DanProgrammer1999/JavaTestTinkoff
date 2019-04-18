@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class ObjectBox{
-    private ArrayList<Object> data;
+    protected ArrayList<Object> data;
 
     public ObjectBox(){
         data = new ArrayList<>();
