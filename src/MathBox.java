@@ -16,6 +16,16 @@ public class MathBox{
             }
         }
     }
+
+    public String toString(){
+        StringBuffer result = new StringBuffer("{");
+        data.forEach((Number number) -> result.append(number).append(", "));
+
+        result.delete(result.length() - 2, result.length());
+        result.append("}");
+
+        return result.toString();
+    }
 }
 
 class NotUniqueItemException extends Exception{
