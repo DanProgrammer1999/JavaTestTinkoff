@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class MathBox{
 
@@ -31,6 +32,23 @@ public class MathBox{
             return (int) result;
         }
         return result;
+    }
+
+    public void splitter(Number factor) throws ArithmeticException{
+        if(factor.doubleValue() == 0.0){
+            throw new ArithmeticException("Cannot divide by zero.");
+        }
+        ListIterator<Number> iterator = data.listIterator();
+        while(iterator.hasNext()){
+            double currElement = iterator.next().doubleValue();
+            double result = currElement/factor.doubleValue();
+            if((int) result - result == 0){
+                iterator.set((int) result);
+            }
+            else{
+                iterator.set(result);
+            }
+        }
     }
 
     public String toString(){
