@@ -91,7 +91,7 @@ public class MathBox{
         return true;
     }
 
-    ListIterator<Number> listIterator(){
+    public ListIterator<Number> listIterator(){
         return data.listIterator();
     }
 
