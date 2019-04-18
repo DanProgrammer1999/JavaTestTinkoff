@@ -53,6 +53,19 @@ public class MathBox{
         }
     }
 
+    public boolean remove(@NotNull Number value){
+        ListIterator<Number> iterator = this.listIterator();
+
+        while(iterator.hasNext()){
+            if(iterator.next().doubleValue() == value.doubleValue()){
+                iterator.remove();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public String toString(){
         StringBuffer result = new StringBuffer("{");
         data.forEach((Number number) -> result.append(number).append(", "));
