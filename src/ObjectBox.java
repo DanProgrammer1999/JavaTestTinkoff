@@ -101,6 +101,8 @@ public class ObjectBox{
     public String toString(){
         StringBuffer result = new StringBuffer("{");
         data.forEach((Object o) -> result.append(o.toString()).append(", "));
+        result.delete(result.length() - 2, result.length());
+        result.append("}");
         return result.toString();
     }
 }
