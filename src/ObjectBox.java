@@ -4,10 +4,19 @@ import java.util.ListIterator;
 public class ObjectBox{
     protected ArrayList<Object> data;
 
+    /**
+     * Constructor for this object
+     */
     public ObjectBox(){
         data = new ArrayList<>();
     }
 
+    /**
+     * Add an object to the list
+     *
+     * @param o The object to be added
+     * @throws Exceptions.NotUniqueItemException Throws exception if this object already exists.
+     */
     public void add(Object o) throws Exceptions.NotUniqueItemException{
         if(data.contains(o)){
             throw new Exceptions.NotUniqueItemException("Object " + o.toString() + " is a duplicate");
@@ -16,6 +25,13 @@ public class ObjectBox{
         data.add(o);
     }
 
+    /**
+     * Remove the specified object, if it exists.
+     *
+     * @param o The object to be removed
+     * @return <code>true</code>, if the object was successfully removed
+     * <code>false</code>, otherwise
+     */
     public boolean remove(Object o){
         ListIterator<Object> iterator = this.listIterator();
 
@@ -29,10 +45,16 @@ public class ObjectBox{
         return false;
     }
 
+    /**
+     * @return <code>ListIterator</code> through the items in this object
+     */
     public ListIterator<Object> listIterator(){
         return data.listIterator();
     }
 
+    /**
+     * @return Number of elements in the object
+     */
     public int size(){
         return data.size();
     }
