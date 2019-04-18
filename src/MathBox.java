@@ -1,7 +1,6 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ListIterator;
 
 public class MathBox{
@@ -75,7 +74,7 @@ public class MathBox{
         return result;
     }
 
-    Iterator<Number> listIterator(){
+    ListIterator<Number> listIterator(){
         return data.listIterator();
     }
 
