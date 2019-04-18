@@ -105,4 +105,8 @@ public class ObjectBox{
         result.append("}");
         return result.toString();
     }
+
+    public String dump(){
+        return toString();
+    }
 }
