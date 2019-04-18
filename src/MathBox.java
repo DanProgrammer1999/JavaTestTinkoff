@@ -23,6 +23,9 @@ public class MathBox extends ObjectBox{
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void add(Object o) throws Exceptions.NotUniqueItemException{
         if(!(o instanceof Number)){

@@ -37,13 +37,20 @@ public class ObjectBox{
         return data.size();
     }
 
-    public boolean equals(ObjectBox box){
-        if(box == null || this.size() != box.size()){
+    /**
+     * Element-wise comparison of this object and other
+     *
+     * @param other object to compare to
+     * @return <code>true</code> if the objects have the same size and they are equal element-wise
+     * <code>false</code>, otherwise
+     */
+    public boolean equals(ObjectBox other){
+        if(other == null || this.size() != other.size()){
             return false;
         }
 
         ListIterator<Object> iter1 = this.listIterator();
-        ListIterator<Object> iter2 = box.listIterator();
+        ListIterator<Object> iter2 = other.listIterator();
 
         while(iter1.hasNext() && iter2.hasNext()){
             if(iter1.next().equals(iter2.next())){
@@ -55,9 +62,7 @@ public class ObjectBox{
     }
 
     /**
-     * Get hash code of this object
-     *
-     * @return Calculated hash code of the object
+     * {@inheritDoc}
      */
     @Override
     public int hashCode(){
