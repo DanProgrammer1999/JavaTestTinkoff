@@ -75,7 +75,7 @@ public class ObjectBox{
         ListIterator<Object> iter2 = other.listIterator();
 
         while(iter1.hasNext() && iter2.hasNext()){
-            if(iter1.next().equals(iter2.next())){
+            if(!iter1.next().equals(iter2.next())){
                 return false;
             }
         }
