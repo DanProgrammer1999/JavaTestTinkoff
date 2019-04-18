@@ -17,7 +17,7 @@ public class ObjectBox{
     }
 
     public boolean remove(Object o){
-        ListIterator<Number> iterator = this.listIterator();
+        ListIterator<Object> iterator = this.listIterator();
 
         while(iterator.hasNext()){
             if(iterator.next().equals(o)){
