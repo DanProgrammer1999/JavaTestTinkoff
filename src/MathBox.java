@@ -74,6 +74,23 @@ public class MathBox{
         return result;
     }
 
+    public boolean equals(MathBox box){
+        if(box == null || this.size() != box.size()){
+            return false;
+        }
+
+        ListIterator<Number> iter1 = this.listIterator();
+        ListIterator<Number> iter2 = box.listIterator();
+
+        while(iter1.hasNext() && iter2.hasNext()){
+            if(iter1.next().doubleValue() != iter2.next().doubleValue()){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     ListIterator<Number> listIterator(){
         return data.listIterator();
     }
