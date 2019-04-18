@@ -11,9 +11,9 @@ public class MathBox{
      * Constructor for class <code>MathBox</code>
      *
      * @param data Array of objects of class <code>Number</code>
-     * @throws NotUniqueItemException Throws exception if a number appears more than once in the array
+     * @throws Exceptions.NotUniqueItemException Throws exception if a number appears more than once in the array
      */
-    public MathBox(@NotNull Number[] data) throws NotUniqueItemException{
+    public MathBox(@NotNull Number[] data) throws Exceptions.NotUniqueItemException{
         this.data = new ArrayList<>();
 
         for(Number n : data){
@@ -21,7 +21,7 @@ public class MathBox{
                 this.data.add(n);
             }
             else{
-                throw new NotUniqueItemException("Number " + n.toString() + "is not unique");
+                throw new Exceptions.NotUniqueItemException("Number " + n.toString() + "is not unique");
             }
         }
     }
@@ -160,11 +160,5 @@ public class MathBox{
      */
     public int size(){
         return data.size();
-    }
-}
-
-class NotUniqueItemException extends Exception{
-    NotUniqueItemException(String message){
-        super(message);
     }
 }
