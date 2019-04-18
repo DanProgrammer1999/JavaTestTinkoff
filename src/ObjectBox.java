@@ -96,4 +96,11 @@ public class ObjectBox{
 
         return result;
     }
+
+    @Override
+    public String toString(){
+        StringBuffer result = new StringBuffer("{");
+        data.forEach((Object o) -> result.append(o.toString()).append(", "));
+        return result.toString();
+    }
 }
