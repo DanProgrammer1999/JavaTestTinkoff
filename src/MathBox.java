@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -5,7 +7,7 @@ public class MathBox{
 
     private ArrayList<Number> data;
 
-    public MathBox(Number[] data) throws NotUniqueItemException{
+    public MathBox(@NotNull Number[] data) throws NotUniqueItemException{
         this.data = new ArrayList<>();
 
         for(Number n : data){
@@ -34,7 +36,7 @@ public class MathBox{
         return result;
     }
 
-    public void splitter(Number factor) throws ArithmeticException{
+    public void splitter(@NotNull Number factor) throws ArithmeticException{
         if(factor.doubleValue() == 0.0){
             throw new ArithmeticException("Cannot divide by zero.");
         }
