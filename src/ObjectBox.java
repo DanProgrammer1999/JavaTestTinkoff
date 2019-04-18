@@ -36,4 +36,21 @@ public class ObjectBox{
     public int size(){
         return data.size();
     }
+
+    public boolean equals(ObjectBox box){
+        if(box == null || this.size() != box.size()){
+            return false;
+        }
+
+        ListIterator<Object> iter1 = this.listIterator();
+        ListIterator<Object> iter2 = box.listIterator();
+
+        while(iter1.hasNext() && iter2.hasNext()){
+            if(iter1.next().equals(iter2.next())){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
